@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasani Vignesh Kumar - Cybersecurity Innovator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            /* Light Black & Gold Theme */
+            --bg-primary-light: #F4F4F5; 
+            --bg-secondary-light: #EAEAEA; 
+            --text-primary-light: #121212; 
+            --text-secondary-light: #555555; 
+            --accent-main-light: #B08D57; 
+            --accent-hover-light: #9A7B4F; 
+            --border-color-light: #D1D1D1; 
+            --particle-color-light: "#B08D57"; 
+            --particle-line-color-light: "#CFB083"; 
+
+
+            /* Dark Black & Gold Theme */
+            --bg-primary-dark: #121212; 
+            --bg-secondary-dark: #1A1A1A; 
+            --text-primary-dark: #E0E0E0; 
+            --text-secondary-dark: #BDBDBD; 
+            --accent-main-dark: #D4AF37; 
+            --accent-hover-dark: #E6BE8A; 
+            --border-color-dark: #333333; 
+            --particle-color-dark: "#D4AF37"; 
+            --particle-line-color-dark: "#E6BE8A";
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-primary-light); 
+            color: var(--text-primary-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body.dark {
+            background-color: var(--bg-primary-dark);
+            color: var(--text-primary-dark);
+        }
+
+        .font-source-code { font-family: 'Source Code Pro', monospace; }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0; 
+        }
+
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary-light); }
+        body.dark ::-webkit-scrollbar-track { background: var(--bg-secondary-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-main-light); border-radius: 4px; }
+        body.dark ::-webkit-scrollbar-thumb { background: var(--accent-main-dark); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover-light); }
+        body.dark ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover-dark); }
+
+        .site-header {
+            background-color: rgba(244, 244, 245, 0.85); 
+            border-bottom: 1px solid var(--border-color-light);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            position: fixed; 
+            top:0; left:0; right:0;
+            z-index: 50; 
+        }
+        body.dark .site-header {
+            background-color: rgba(18, 18, 18, 0.85); 
+            border-bottom: 1px solid var(--border-color-dark);
+        }
+
+        .header-nav-link {
+            color: var(--text-secondary-light);
+            font-weight: 500;
+            padding: 0.5rem 0.25rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        body.dark .header-nav-link { color: var(--text-secondary-dark); }
+        .header-nav-link:hover { color: var(--accent-main-light); }
+        body.dark .header-nav-link:hover { color: var(--accent-main-dark); }
+        .header-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-main-light);
+            transition: width 0.3s ease;
+        }
+        body.dark .header-nav-link::after { background-color: var(--accent-main-dark); }
+        .header-nav-link.active, .header-nav-link:hover::after { width: 100%; }
+        .header-nav-link.active { color: var(--accent-main-light); font-weight: 600;}
+        body.dark .header-nav-link.active { color: var(--accent-main-dark); }
+
+        #nav-toggle-button { color: var(--text-primary-light); }
+        body.dark #nav-toggle-button { color: var(--text-primary-dark); }
+        #mobile-navigation {
+            background-color: var(--bg-primary-light);
+            border-top: 1px solid var(--border-color-light);
+        }
+        body.dark #mobile-navigation {
+            background-color: var(--bg-secondary-dark);
+            border-top: 1px solid var(--border-color-dark);
+        }
+        #mobile-navigation a { color: var(--text-secondary-light); }
+        body.dark #mobile-navigation a { color: var(--text-secondary-dark); }
+        #mobile-navigation a:hover { background-color: var(--bg-secondary-light); color: var(--accent-main-light); }
+        body.dark #mobile-navigation a:hover { background-color: var(--bg-primary-dark); color: var(--accent-main-dark); }
+
+        #hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column; 
+            justify-content: flex-start; /* Changed from center to flex-start */
+            align-items: center; 
+            position: relative;
+            background-color: transparent; 
+            padding-top: 10rem; /* Increased top padding to push content down from header */
+            padding-bottom: 4rem; 
+            z-index: 1; 
+        }
+        
+        .hero-title-main {
+            font-size: clamp(2.2rem, 5.5vw, 4rem); 
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-primary-light); 
+        }
+        body.dark .hero-title-main {
+            color: var(--text-primary-dark);
+        }
+        .hero-title-accent { color: var(--accent-main-light); } 
+        body.dark .hero-title-accent { color: var(--accent-main-dark); }
+
+        .hero-roles-text { 
+            font-family: 'Source Code Pro', monospace;
+            color: var(--accent-main-light);
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem); 
+            min-height: 2.2rem; 
+        }
+        body.dark .hero-roles-text { color: var(--accent-main-dark); }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 3px; 
+            background-color: var(--accent-main-light);
+            animation: blink 0.7s infinite;
+            margin-left: 2px;
+            vertical-align: baseline; 
+        }
+        body.dark .typing-cursor { background-color: var(--accent-main-dark); }
+
+        #name-typing-cursor { height: clamp(2rem, 5vw, 3.5rem); } 
+        #roles-typing-cursor { height: clamp(1rem, 2.2vw, 1.4rem); } 
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .scroll-down-arrow {
+            position: absolute;
+            bottom: 2.5rem; 
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem; 
+            color: var(--accent-main-light);
+            animation: bounce 2s infinite;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+        body.dark .scroll-down-arrow { color: var(--accent-main-dark); }
+        .scroll-down-arrow:hover {
+            color: var(--accent-hover-light);
+        }
+        body.dark .scroll-down-arrow:hover { color: var(--accent-hover-dark); }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-15px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-7px);
+            }
+        }
+
+
+        .btn-cta-primary {
+            background-color: var(--accent-main-light);
+            color: #FFFFFF; 
+            padding: 0.875rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        body.dark .btn-cta-primary {
+            background-color: var(--accent-main-dark);
+            color: var(--bg-primary-dark); 
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15); 
+        }
+        .btn-cta-primary:hover {
+            background-color: var(--accent-hover-light);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        body.dark .btn-cta-primary:hover { 
+            background-color: var(--accent-hover-dark);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-cta-outline {
+            border: 2px solid var(--accent-main-light);
+            color: var(--accent-main-light);
+            padding: calc(0.75rem - 2px) calc(1.875rem - 2px); 
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        body.dark .btn-cta-outline {
+            border-color: var(--accent-main-dark);
+            color: var(--accent-main-dark);
+        }
+        .btn-cta-outline:hover {
+            background-color: var(--accent-main-light);
+            color: #FFFFFF; 
+            transform: translateY(-3px);
+        }
+        body.dark .btn-cta-outline:hover { 
+            background-color: var(--accent-main-dark);
+            color: var(--bg-primary-dark);
+        }
+        .hero-social-link {
+            color: var(--text-secondary-light);
+            font-size: 1.5rem; 
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        body.dark .hero-social-link { color: var(--text-secondary-dark); }
+        .hero-social-link:hover {
+            color: var(--accent-main-light);
+            transform: scale(1.1);
+        }
+        body.dark .hero-social-link:hover { color: var(--accent-main-dark); }
+
+
+        .content-wrapper { 
+            padding: 5rem 1.5rem; 
+            position: relative; 
+            z-index: 1; 
+            background-color: transparent !important; 
+        } 
+        @media (min-width: 768px) { .content-wrapper { padding: 6rem 1.5rem; } }
+
+        .section-title-display {
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .section-title-display .accent-mark { color: var(--accent-main-light); font-weight: 700; }
+        body.dark .section-title-display .accent-mark { color: var(--accent-main-dark); }
+
+        .section-subtitle-text {
+            font-size: 1rem; 
+            color: var(--text-secondary-light);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+        body.dark .section-subtitle-text { color: var(--text-secondary-dark); }
+        @media (min-width: 768px) { .section-subtitle-text { font-size: 1.125rem; margin-bottom: 3.5rem; } }
+
+        .data-card {
+            background-color: var(--bg-primary-light); 
+            border-radius: 0.75rem;
+            padding: 1.5rem; 
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color-light);
+        }
+        body.dark .data-card { 
+            background-color: var(--bg-secondary-dark); 
+            border-color: var(--border-color-dark);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1); 
+        }
+        
+        #projects-showcase .data-card {
+            padding: 1.25rem; 
+        }
+        #projects-showcase .research-card-layout { 
+            padding: 1.25rem; 
+        }
+        @media (min-width: 768px) { 
+            #projects-showcase .data-card { padding: 1.5rem; }
+            #projects-showcase .research-card-layout { padding: 1.5rem; }
+            .data-card { padding: 2rem; } 
+        }
+
+
+        .data-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08); 
+        }
+        body.dark .data-card:hover { box-shadow: 0 10px 35px rgba(255, 255, 255, 0.05); } 
+
+        .data-card-icon { font-size: 2.2rem; color: var(--accent-main-light); margin-bottom: 1rem; }
+        body.dark .data-card-icon { color: var(--accent-main-dark); }
+        @media (min-width: 768px) { .data-card-icon { font-size: 2.5rem; } }
+
+        .data-card-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; }
+        #projects-showcase .data-card-title { font-size: 1.1rem; margin-bottom: 0.5rem; } 
+        @media (min-width: 768px) { 
+            .data-card-title { font-size: 1.375rem; }
+            #projects-showcase .data-card-title { font-size: 1.25rem; }
+        }
+
+
+        .timeline-path::before { background-color: var(--border-color-light); }
+        body.dark .timeline-path::before { background-color: var(--border-color-dark); }
+
+        .timeline-marker { 
+            background-color: var(--accent-main-light); 
+            border: 3px solid var(--bg-primary-light); 
+        }
+        body.dark .timeline-marker { 
+            background-color: var(--accent-main-dark); 
+            border: 3px solid var(--bg-primary-dark); 
+        }
+
+
+        .timeline-meta { color: var(--text-secondary-light); }
+        body.dark .timeline-meta { color: var(--text-secondary-dark); }
+        .timeline-header { font-size: 1.1rem; } 
+        @media (min-width: 768px) { .timeline-header { font-size: 1.25rem; } }
+        .timeline-org { color: var(--text-primary-light); }
+        body.dark .timeline-org { color: var(--text-primary-dark); }
+
+        .skill-pill {
+            background-color: var(--accent-main-light);
+            color: #FFFFFF; 
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem; 
+            font-weight: 500;
+            font-family: 'Source Code Pro', monospace;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        body.dark .skill-pill { 
+            background-color: var(--accent-main-dark); 
+            color: var(--bg-primary-dark); 
+        }
+        @media (min-width: 768px) { .skill-pill { font-size: 0.875rem; } }
+
+        .skill-pill:hover { background-color: var(--accent-hover-light); transform: scale(1.05); }
+        body.dark .skill-pill:hover { background-color: var(--accent-hover-dark); }
+
+        .cert-item-card {
+            text-align: center;
+            background-color: var(--bg-primary-light); 
+            border-radius: 0.5rem;
+            padding: 1rem; 
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03); 
+            border: 1px solid var(--border-color-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px; 
+         }
+        body.dark .cert-item-card { 
+            background-color: var(--bg-secondary-dark); 
+            border-color: var(--border-color-dark);
+            box-shadow: 0 3px 10px rgba(255,255,255,0.03);
+        }
+        @media (min-width: 768px) { .cert-item-card { padding: 1.25rem; } }
+
+
+        .cert-item-card i { 
+            font-size: 2rem; 
+            color: var(--accent-main-light); 
+            margin-bottom: 0.75rem; 
+            transition: transform 0.3s ease; 
+        }
+        body.dark .cert-item-card i { color: var(--accent-main-dark); }
+        @media (min-width: 768px) { .cert-item-card i { font-size: 2.25rem; } } 
+
+        .cert-item-card:hover i { transform: rotate(5deg) scale(1.1); }
+        
+        .cert-title { 
+            font-weight: 600; 
+            font-size: 0.8rem; 
+            line-height: 1.25; 
+            margin-bottom: 0.25rem; 
+        } 
+        @media (min-width: 768px) { .cert-title { font-size: 0.875rem; } } 
+
+        .cert-org { 
+            font-size: 0.7rem; 
+            color: var(--text-secondary-light); 
+        }
+        body.dark .cert-org { color: var(--text-secondary-dark); }
+        @media (min-width: 768px) { .cert-org { font-size: 0.75rem; } } 
+
+
+        .styled-input, .styled-textarea {
+            background-color: var(--bg-primary-light);
+            border: 1px solid var(--border-color-light);
+            color: var(--text-primary-light);
+            border-radius: 0.375rem; 
+            padding: 0.875rem 1rem; 
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+        body.dark .styled-input, body.dark .styled-textarea {
+            background-color: var(--bg-secondary-dark); 
+            border-color: var(--border-color-dark);
+            color: var(--text-primary-dark);
+        }
+        .styled-input:focus, .styled-textarea:focus {
+            border-color: var(--accent-main-light);
+            box-shadow: 0 0 0 3px rgba(176, 141, 87, 0.15); 
+        }
+        body.dark .styled-input:focus, body.dark .styled-textarea:focus {
+            border-color: var(--accent-main-dark);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2); 
+        }
+
+        .site-footer {
+            background-color: var(--text-primary-light); 
+            color: #E0E0E0; 
+            padding: 3rem 1.5rem;
+             position: relative; z-index: 1; 
+        }
+        body.dark .site-footer {
+            background-color: #0A0A0A; 
+            color: var(--text-secondary-dark);
+        }
+        .footer-social-link { color: #E0E0E0; font-size: 1.5rem; transition: color 0.3s ease, transform 0.3s ease; }
+        body.dark .footer-social-link { color: var(--text-secondary-dark); }
+        .footer-social-link:hover { color: var(--accent-main-light); transform: scale(1.1); }
+        body.dark .footer-social-link:hover { color: var(--accent-main-dark); }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        .animate-on-scroll.is-inview {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero-image-container img, #about-me img, #projects-showcase .project-image { 
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.07); 
+            object-fit: cover;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        body.dark .hero-image-container img, body.dark #about-me img, body.dark #projects-showcase .project-image { 
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.03); 
+        }
+        .hero-image-container img:hover, #about-me img:hover, #projects-showcase .project-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        }
+        body.dark .hero-image-container img:hover, body.dark #about-me img:hover, body.dark #projects-showcase .project-image:hover {
+             box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
+        }
+        
+        #projects-showcase .project-image {
+            max-height: 150px; 
+        }
+        #projects-showcase .research-image { 
+             max-height: 180px; 
+        }
+
+
+        #darkModeToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--bg-secondary-light); 
+            color: var(--text-primary-light); 
+            border: 1px solid var(--border-color-light);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.25rem; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+        }
+        body.dark #darkModeToggle {
+            background-color: var(--bg-secondary-dark);
+            color: var(--text-primary-dark);
+            border-color: var(--border-color-dark);
+        }
+        #darkModeToggle:hover { transform: scale(1.1); }
+
+    </style>
+</head>
+<body>
+    <body oncontextmenu="return false;">
+
+    <div id="particles-js"></div>
+
+    <header class="site-header fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl sm:text-3xl font-bold font-poppins text-accent-main-light dark:text-accent-main-dark">KVK<span class="text-text-primary-light dark:text-text-primary-dark">.</span></a>
+            <nav class="hidden md:flex space-x-4 lg:space-x-7 items-center text-sm">
+                <a href="#about-me" class="header-nav-link">About</a>
+                <a href="#expertise" class="header-nav-link">Expertise</a>
+                <a href="#journey" class="header-nav-link">Journey</a>
+                <a href="#projects-showcase" class="header-nav-link">Projects</a>
+                <a href="#credentials" class="header-nav-link">Credentials</a>
+                <a href="#connect" class="header-nav-link">Connect</a>
+            </nav>
+            <button id="nav-toggle-button" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+        <div id="mobile-navigation" class="md:hidden hidden shadow-lg">
+            <a href="#about-me" class="block py-3 px-6 hover:bg-gray-50 transition-colors">About</a>
+            <a href="#expertise" class="block py-3 px-6 hover:bg-gray-50 transition-colors">Expertise</a>
+            <a href="#journey" class="block py-3 px-6 hover:bg-gray-50 transition-colors">Journey</a>
+            <a href="#projects-showcase" class="block py-3 px-6 hover:bg-gray-50 transition-colors">Projects</a>
+            <a href="#credentials" class="block py-3 px-6 hover:bg-gray-50 transition-colors">Credentials</a>
+            <a href="#connect" class="block py-3 px-6 hover:bg-gray-50 transition-colors">Connect</a>
+        </div>
+    </header>
+
+    <section id="hero-section" class="relative">
+        <div class="container mx-auto px-4 sm:px-6"> 
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 lg:col-span-6 text-center md:text-left animate-on-scroll">
+                    <h1 class="hero-title-main mb-2" id="hero-typed-name">
+                        <span id="typing-name-text"></span><span id="name-typing-cursor" class="typing-cursor"></span>
+                    </h1>
+                    <p class="hero-roles-text mb-6" id="hero-typed-roles">
+                        <span id="typing-roles-text"></span><span id="roles-typing-cursor" class="typing-cursor" style="display: none;"></span>
+                    </p>
+                    <p class="text-md sm:text-lg text-text-secondary-light dark:text-text-secondary-dark mb-8 max-w-lg mx-auto md:mx-0">
+                        Architecting secure digital environments through meticulous VAPT, continuous learning, and a proactive approach to emerging cyber threats.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-3 sm:space-y-0 sm:space-x-4 mb-8">
+                        <a href="#projects-showcase" class="btn-cta-primary text-sm sm:text-base">
+                            <i class="fas fa-shield-halved mr-2"></i> Explore My Work
+                        </a>
+                        <a href="assets/Vignesh_kumar_kasani.pdf" download="Kasani_Vignesh_Kumar_Resume.pdf" class="btn-cta-outline text-sm sm:text-base">
+                            <i class="fas fa-file-lines mr-2"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="flex justify-center md:justify-start space-x-5">
+                        <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" class="hero-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/your-github-username" target="_blank" class="hero-social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://medium.com/@vigneshkumar3233" target="_blank" class="hero-social-link" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+                <div class="md:col-span-5 lg:col-span-6 hero-image-container hidden md:block animate-on-scroll" style="transition-delay: 0.2s;">
+                    <img src="assets/kvk.jpg" alt="Kasani Vignesh Kumar - Cybersecurity Portfolio" class="w-full h-auto max-h-[500px] lg:max-h-[600px]">
+                </div>
+            </div>
+            <a href="#about-me" class="scroll-down-arrow" aria-label="Scroll to About section">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about-me" class="content-wrapper">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-5 animate-on-scroll text-center">
+                    <img src="assets/20230325_075435.jpg" alt="Kasani Vignesh Kumar" class="rounded-lg shadow-xl w-full max-w-xs sm:max-w-sm lg:max-w-full mx-auto">
+                </div>
+                <div class="lg:col-span-7 animate-on-scroll" style="transition-delay: 0.15s;">
+                    <h2 class="section-title-display mb-4 text-center lg:text-left">My Mission<span class="accent-mark">.</span></h2>
+                    <p class="section-subtitle-text !max-w-none !mb-6 text-center lg:text-left">Driven by a deep passion for technology and a commitment to digital safety.</p>
+                    <div class="text-text-secondary-light dark:text-text-secondary-dark text-md sm:text-lg space-y-4 leading-relaxed">
+                        <p>Hello! I'm Kasani Vignesh Kumar, a cybersecurity professional from Vadodara, India. My journey in technology is fueled by an insatiable curiosity and a profound passion for continuous learning, ensuring I stay at the forefront of industry advancements.</p>
+                        <p>I am dedicated to exploring innovative solutions and moving beyond conventional methods to maintain cutting-edge expertise. With a steadfast commitment to growth, integrity, and ethical practices, my primary objective is to evolve into a highly skilled professional, adept at tackling complex cybersecurity challenges and making a significant, positive impact in the field.</p>
+                        <p class="font-semibold text-accent-main-light dark:text-accent-main-dark">Core Philosophy: Security through vigilance, innovation, and unwavering ethical standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="content-wrapper">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center animate-on-scroll">
+                <h2 class="section-title-display">Areas of Expertise<span class="accent-mark">.</span></h2>
+                <p class="section-subtitle-text mx-auto">Combining technical proficiency with strategic security insights.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div class="data-card animate-on-scroll">
+                    <div class="data-card-icon"><i class="fas fa-user-secret"></i></div>
+                    <h3 class="data-card-title">Vulnerability Assessment & Penetration Testing (VAPT)</h3>
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm sm:text-base">Comprehensive testing of web applications and networks (internal/external) using manual and automated techniques. Expertise in black-box & grey-box methodologies.</p>
+                </div>
+                <div class="data-card animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="data-card-icon"><i class="fab fa-osi"></i></div>
+                    <h3 class="data-card-title">Web Application Security</h3>
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm sm:text-base">In-depth knowledge of OWASP Top 10 vulnerabilities and best practices for securing web platforms against common and emerging threats.</p>
+                </div>
+                <div class="data-card animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="data-card-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3 class="data-card-title">Network Security</h3>
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm sm:text-base">Proficiency in analyzing network architectures, identifying security flaws, and implementing defensive strategies for robust network protection.</p>
+                </div>
+                 <div class="data-card animate-on-scroll" style="transition-delay: 0.3s;">
+                    <div class="data-card-icon"><i class="fas fa-tools"></i></div>
+                    <h3 class="data-card-title">Security Tools Proficiency</h3>
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm sm:text-base">Skilled in using a wide array of security testing tools including Metasploit, Burp Suite, Nmap, SQLMap, Wireshark, Nessus, and Hydra.</p>
+                </div>
+                <div class="data-card animate-on-scroll" style="transition-delay: 0.4s;">
+                    <div class="data-card-icon"><i class="fab fa-linux"></i></div>
+                    <h3 class="data-card-title">Operating Systems</h3>
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm sm:text-base">Comfortable working with various OS environments: Linux (Debian, Fedora), Windows, and Unix systems.</p>
+                </div>
+                 <div class="data-card animate-on-scroll" style="transition-delay: 0.5s;">
+                    <div class="data-card-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="data-card-title">Scripting & Programming</h3>
+                    <p class="text-text-secondary-light dark:text-text-secondary-dark text-sm sm:text-base">Basic proficiency in Python, Bash for automation and custom tooling, along with foundational knowledge in Java and C.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" class="content-wrapper">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center animate-on-scroll">
+                <h2 class="section-title-display">My Journey<span class="accent-mark">.</span></h2>
+                <p class="section-subtitle-text mx-auto">Tracing the path of learning and professional growth.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-8 text-center lg:text-left animate-on-scroll"><i class="fas fa-briefcase mr-3 text-accent-main-light dark:text-accent-main-dark"></i>Professional Experience</h3>
+                    <div class="timeline-path">
+                        <div class="timeline-event animate-on-scroll">
+                            <div class="timeline-marker"></div>
+                            <p class="timeline-meta">Dec 2024 – May 2025</p>
+                            <h4 class="timeline-header">VAPT Intern</h4>
+                            <p class="timeline-org">TechDefence Labs</p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary-light dark:text-text-secondary-dark marker:text-accent-main-light dark:marker:text-accent-main-dark text-sm sm:text-base">
+                                <li>Engaged in automated/manual vulnerability assessments and penetration testing of web applications.</li>
+                                <li>Conducted network penetration tests (internal/external) using black-box/grey-box methods.</li>
+                                <li>Developed skills in identifying, analyzing, and reporting security vulnerabilities.</li>
+                            </ul>
+                        </div>
+                        </div>
+                </div>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-semibold mb-8 text-center lg:text-left animate-on-scroll" style="transition-delay: 0.1s;"><i class="fas fa-graduation-cap mr-3 text-accent-main-light dark:text-accent-main-dark"></i>Academic Foundation</h3>
+                    <div class="timeline-path">
+                        <div class="timeline-event animate-on-scroll" style="transition-delay: 0.1s;">
+                            <div class="timeline-marker"></div>
+                            <p class="timeline-meta">July 2021 – July 2025</p>
+                            <h4 class="timeline-header">B.Tech Cyber Security Engineering</h4>
+                            <p class="timeline-org">Parul University, Vadodara</p>
+                            <ul class="list-disc list-inside space-y-1 text-text-secondary-light dark:text-text-secondary-dark marker:text-accent-main-light dark:marker:text-accent-main-dark text-sm sm:text-base">
+                                <li>Core Focus: Kali Linux, Cryptography, Cloud Security Fundamentals, Active Directory Pentesting.</li>
+                                <li>Relevant Coursework: Network Security, Application Security, Digital Forensics, Cyber Law & Ethics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects-showcase" class="content-wrapper">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center animate-on-scroll">
+                <h2 class="section-title-display">Projects & Research<span class="accent-mark">.</span></h2>
+                <p class="section-subtitle-text mx-auto">Applying knowledge to solve real-world challenges and contribute to the field.</p>
+            </div>
+            <div id="projects-grid" class="space-y-8 md:space-y-10">
+                </div>
+        </div>
+    </section>
+
+    <section id="credentials" class="content-wrapper">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center animate-on-scroll">
+                <h2 class="section-title-display">My Credentials<span class="accent-mark">.</span></h2>
+                <p class="section-subtitle-text mx-auto">Validated skills and knowledge through industry-recognized certifications.</p>
+            </div>
+            <div id="certifications-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 sm:gap-x-6 gap-y-8 sm:gap-y-10">
+                </div>
+        </div>
+    </section>
+
+    <section id="connect" class="content-wrapper">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center animate-on-scroll">
+                <h2 class="section-title-display">Let's Connect<span class="accent-mark">.</span></h2>
+                <p class="section-subtitle-text mx-auto">
+                    I'm eager to discuss new opportunities, collaborative projects, or insights into the evolving world of cybersecurity.
+                </p>
+            </div>
+            <div class="max-w-xl lg:max-w-2xl mx-auto data-card p-6 sm:p-8 animate-on-scroll" style="transition-delay: 0.1s;">
+                <form id="contactFormAsymm" action="https://formspree.io/f/manovlvj" method="POST" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-x-6 gap-y-6">
+                        <div>
+                            <label for="asymm_name" class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Your Name</label>
+                            <input type="text" id="asymm_name" name="name" required class="styled-input">
+                        </div>
+                        <div>
+                            <label for="asymm_email" class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Your Email</label>
+                            <input type="email" id="asymm_email" name="_replyto" required class="styled-input"> </div>
+                    </div>
+                    <div>
+                        <label for="asymm_subject" class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Subject</label>
+                        <input type="text" id="asymm_subject" name="_subject" required class="styled-input"> </div>
+                    <div>
+                        <label for="asymm_message" class="block text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark mb-1">Message</label>
+                        <textarea id="asymm_message" name="message" rows="4" required class="styled-textarea"></textarea>
+                    </div>
+                    <div class="text-center pt-2">
+                        <button type="submit" class="btn-cta-primary w-full sm:w-auto text-sm sm:text-base">
+                            <i class="fas fa-paper-plane mr-2"></i> Send Inquiry
+                        </button>
+                    </div>
+                </form>
+                </div>
+            <div class="text-center mt-10 sm:mt-12 animate-on-scroll" style="transition-delay: 0.2s;">
+                <p class="text-text-secondary-light dark:text-text-secondary-dark mb-3 text-sm sm:text-base">Alternatively, reach out directly:</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
+                    <a href="mailto:Vigneshkumar3233@gmail.com" class="text-accent-main-light dark:text-accent-main-dark hover:text-accent-hover-light dark:hover:text-accent-hover-dark text-md sm:text-lg font-medium transition-colors">
+                        <i class="fas fa-envelope mr-1"></i> Vigneshkumar3233@gmail.com
+                    </a>
+                    <span class="text-text-secondary-light dark:text-text-secondary-dark hidden sm:inline">|</span>
+                    <a href="tel:+919849556730" class="text-accent-main-light dark:text-accent-main-dark hover:text-accent-hover-light dark:hover:text-accent-hover-dark text-md sm:text-lg font-medium transition-colors">
+                        <i class="fas fa-phone mr-1"></i> +91 9849556730
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer text-center">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" class="footer-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/your-github-username" target="_blank" class="footer-social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://medium.com/@vigneshkumar3233" target="_blank" class="footer-social-link" aria-label="Medium"><i class="fab fa-medium"></i></a>
+            </div>
+            <p class="text-sm">
+                &copy; <span id="currentYearAsymm"></span> Kasani Vignesh Kumar. All Rights Reserved.
+            </p>
+            <p class="text-xs mt-1 font-source-code">
+                Crafted with Precision & Passion // Version 3.4
+            </p>
+        </div>
+    </footer>
+
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i> </button>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const navToggleButton = document.getElementById('nav-toggle-button');
+        const mobileNavigation = document.getElementById('mobile-navigation');
+        if (navToggleButton && mobileNavigation) {
+            navToggleButton.addEventListener('click', () => {
+                mobileNavigation.classList.toggle('hidden');
+                const icon = navToggleButton.querySelector('i');
+                icon.classList.toggle('fa-bars-staggered');
+                icon.classList.toggle('fa-times');
+            });
+            document.querySelectorAll('#mobile-navigation a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNavigation.classList.add('hidden');
+                    const icon = navToggleButton.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars-staggered');
+                });
+            });
+        }
+
+        // Active Nav Link on Scroll
+        const headerLinks = document.querySelectorAll('.header-nav-link');
+        const pageSections = document.querySelectorAll('.content-wrapper, #hero-section'); 
+        
+        function updateActiveNavLink() {
+            let currentSectionId = 'hero-section'; 
+            const headerHeight = document.querySelector('.site-header').offsetHeight;
+
+            pageSections.forEach(section => {
+                const sectionTop = section.offsetTop - headerHeight - 70; 
+                if (window.scrollY >= sectionTop) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            headerLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', updateActiveNavLink);
+        
+
+        // Scroll Reveal Animation
+        let scrollElementsToAnimate; 
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return ( elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend );
+        };
+        const displayScrollElement = (element) => { element.classList.add('is-inview'); };
+        
+        const handleScrollAnimation = () => {
+            if (!scrollElementsToAnimate) return; 
+            scrollElementsToAnimate.forEach((el) => {
+                if (elementInView(el, 1.1)) { displayScrollElement(el); }
+            });
+        };
+        
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerOffset = document.querySelector('.site-header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Update Footer Year
+        const currentYearElement = document.getElementById('currentYearAsymm');
+        if (currentYearElement) { currentYearElement.textContent = new Date().getFullYear(); }
+
+        // Certifications Data and Rendering
+        const certificationsData = [
+            {title: "ISO/IEC 27001:2022 INFORMATION SECURITY ASSOCIATE", org: "SKILLFRONT", icon: "fas fa-award"},
+            {title: "Certified Network Security Practitioner (CNSP)", org: "TheSecOpsGroup", icon: "fas fa-shield-virus"},
+            {title: "Geo-data Sharing and CyberSecurity", org: "IIRS (ISRO)", icon: "fas fa-satellite-dish"},
+            {title: "Ethical Hacking Essentials", org: "EC-Council", icon: "fas fa-user-secret"},
+            {title: "Cisco Networking Essentials", org: "Cisco", icon: "fas fa-network-wired"},
+            {title: "Network Defense", org: "Cisco", icon: "fas fa-user-shield"},
+            {title: "Cyber Threat Management", org: "Cisco", icon: "fas fa-bug"},
+            {title: "AIG Shields Up Cybersecurity", org: "Forage", icon: "fas fa-shield-alt"},
+            {title: "Tata Group Cybersecurity Analyst", org: "Forage", icon: "fas fa-user-tie"},
+            {title: "Cyber Security (Short Course)", org: "University of Maryland", icon: "fas fa-university"}
+        ];
+
+        function renderCertifications() {
+            const certificationsGrid = document.getElementById('certifications-grid');
+            if (certificationsGrid) {
+                certificationsGrid.innerHTML = ''; 
+                certificationsData.forEach((cert, index) => {
+                    const certCard = document.createElement('div');
+                    certCard.className = 'cert-item-card animate-on-scroll'; 
+                    certCard.innerHTML = `
+                        <i class="${cert.icon}"></i>
+                        <h4 class="cert-title">${cert.title}</h4>
+                        <p class="cert-org">${cert.org}</p>
+                    `;
+                    certificationsGrid.appendChild(certCard);
+                });
+            }
+        }
+
+        // Projects Data and Rendering
+        const projectsData = [
+            {
+                isResearch: true, 
+                title: "Published Research", 
+                fullTitle: "\"OSINT-Based Threat Intelligence: Investigating Leaked Data on the Dark Web\"",
+                authors: "Kasani Vignesh Kumar, Dr. Mukesh Patidar | IJSREM, Vol. 09, Issue 03, March 2025.",
+                description: "This research delves into leveraging Open Source Intelligence (OSINT) for proactive threat intelligence, focusing on analyzing data leaks within dark web ecosystems.",
+                link: "https://ijsrem.com/",
+                icon: "fas fa-file-alt",
+                image: "assets/dark.jpeg" 
+            },
+            {
+                type: 'tool', 
+                title: "Domain Recon Tool",
+                description: "A Python-based reconnaissance tool that gathers WHOIS, DNS, and subdomain enumeration details. Features a sleek Tkinter GUI.",
+                features: [
+                    "WHOIS Lookup",
+                    "DNS Enumeration (A, MX, NS, TXT, SOA)",
+                    "Result Logging & Copying"
+                ],
+                link: "https://github.com/vigneshkumarkasani/Domain_Recon",
+                icon: "fas fa-search-location", 
+                image: "assets/domain.jpeg" 
+            },
+            {
+                type: 'tool', 
+                title: "Web Crawler",
+                description: "A simple Python web crawler to explore and retrieve pages from a starting URL, following links with basic limits.",
+                features: [
+                    "Crawls Web Pages",
+                    "Recursive Link Following",
+                    "Link Validation"
+                ],
+                link: "https://github.com/vigneshkumarkasani/Web-crawler",
+                icon: "fas fa-spider", 
+                image: "assets/web_crawler.avif" 
+            }
+        ];
+
+        function renderProjects() {
+            const projectsGrid = document.getElementById('projects-grid');
+            if (projectsGrid) {
+                projectsGrid.innerHTML = ''; 
+                
+                const researchProjects = projectsData.filter(p => p.isResearch);
+                const toolProjects = projectsData.filter(p => p.type === 'tool');
+
+                researchProjects.forEach(project => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'data-card animate-on-scroll lg:flex lg:items-start lg:gap-6 research-card-layout';
+                    projectCard.innerHTML = `
+                        <div class="lg:w-2/5 mb-4 lg:mb-0 text-center">
+                             <img src="${project.image}" alt="${project.title}" class="project-image research-image rounded-md shadow-lg w-full max-w-xs mx-auto">
+                        </div>
+                        <div class="lg:w-3/5">
+                            <h3 class="data-card-title"><i class="${project.icon} mr-2"></i>${project.title}</h3>
+                            <p class="text-md font-semibold text-text-primary-light dark:text-text-primary-dark mb-1">${project.fullTitle}</p>
+                            <p class="text-xs text-text-secondary-light dark:text-text-secondary-dark font-source-code mb-2">
+                                ${project.authors}
+                            </p>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark mb-3 text-xs sm:text-sm">
+                                ${project.description}
+                            </p>
+                            <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-accent-main-light dark:text-accent-main-dark hover:text-accent-hover-light dark:hover:text-accent-hover-dark font-semibold group text-xs sm:text-sm">
+                                Access Publication <i class="fas fa-arrow-right ml-1 transform group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                        </div>
+                    `;
+                    projectsGrid.appendChild(projectCard);
+                });
+                
+                if (toolProjects.length > 0) {
+                    const toolProjectsWrapper = document.createElement('div');
+                    toolProjectsWrapper.className = 'grid md:grid-cols-2 gap-8 md:gap-10 mt-8 md:mt-10'; 
+
+                    toolProjects.forEach(project => {
+                        const projectCard = document.createElement('div');
+                        projectCard.className = 'data-card animate-on-scroll flex flex-col h-full';
+                        projectCard.innerHTML = `
+                            <div class="mb-3 text-center">
+                                 <img src="${project.image}" alt="${project.title}" class="project-image rounded-md shadow-lg w-full max-w-[280px] mx-auto h-40 object-cover">
+                            </div>
+                            <h3 class="data-card-title"><i class="${project.icon} mr-2"></i>${project.title}</h3>
+                            <p class="text-text-secondary-light dark:text-text-secondary-dark text-xs sm:text-sm mb-2 flex-grow">${project.description}</p>
+                            <div class="mb-3">
+                                <p class="font-semibold text-xs mb-1 text-text-primary-light dark:text-text-primary-dark">Key Features:</p>
+                                <ul class="list-disc list-inside space-y-0.5 text-text-secondary-light dark:text-text-secondary-dark text-xs marker:text-accent-main-light dark:marker:text-accent-main-dark">
+                                    ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center text-accent-main-light dark:text-accent-main-dark hover:text-accent-hover-light dark:hover:text-accent-hover-dark font-semibold group text-xs sm:text-sm">
+                                View on GitHub <i class="fab fa-github ml-1"></i>
+                            </a>
+                        `;
+                        toolProjectsWrapper.appendChild(projectCard);
+                    });
+                    projectsGrid.appendChild(toolProjectsWrapper);
+                }
+            }
+        }
+
+
+        // Typing Effect Script
+        const nameToType = "Kasani Vignesh Kumar";
+        const rolesToType = ["VAPT Security Analyst", "Ethical Hacker", "Security Researcher", "Penetration Tester", "Bug Hunter"];
+        
+        const typingNameTextElement = document.getElementById('typing-name-text');
+        const nameTypingCursorElement = document.getElementById('name-typing-cursor');
+        const typingRolesTextElement = document.getElementById('typing-roles-text');
+        const rolesTypingCursorElement = document.getElementById('roles-typing-cursor');
+
+        let nameCharIndex = 0;
+        let roleIndex = 0;
+        let roleCharIndex = 0;
+        let isDeletingRole = false;
+
+        function typeName() {
+            if (typingNameTextElement && nameCharIndex < nameToType.length) {
+                typingNameTextElement.textContent += nameToType.charAt(nameCharIndex);
+                nameCharIndex++;
+                setTimeout(typeName, 100); 
+            } else {
+                if(nameTypingCursorElement) nameTypingCursorElement.style.display = 'none'; 
+                if(rolesTypingCursorElement) rolesTypingCursorElement.style.display = 'inline-block'; 
+                setTimeout(typeRoles, 500); 
+            }
+        }
+
+        function typeRoles() {
+            if (!typingRolesTextElement || !rolesTypingCursorElement) return; 
+
+            const currentRole = rolesToType[roleIndex];
+            if (isDeletingRole) {
+                typingRolesTextElement.textContent = currentRole.substring(0, roleCharIndex - 1);
+                roleCharIndex--;
+            } else {
+                typingRolesTextElement.textContent = currentRole.substring(0, roleCharIndex + 1);
+                roleCharIndex++;
+            }
+
+            if (!isDeletingRole && roleCharIndex === currentRole.length) {
+                setTimeout(() => isDeletingRole = true, 2000); 
+            } else if (isDeletingRole && roleCharIndex === 0) {
+                isDeletingRole = false;
+                roleIndex = (roleIndex + 1) % rolesToType.length;
+            }
+
+            const typeSpeed = isDeletingRole ? 75 : 150;
+            setTimeout(typeRoles, typeSpeed);
+        }
+
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const moonIconClass = 'fa-moon';
+        const sunIconClass = 'fa-sun';
+
+        function setDarkMode(isDark) {
+            if (isDark) {
+                body.classList.add('dark');
+                darkModeToggle.innerHTML = `<i class="fas ${sunIconClass}"></i>`; 
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark');
+                darkModeToggle.innerHTML = `<i class="fas ${moonIconClass}"></i>`; 
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        if (darkModeToggle) {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                setDarkMode(true);
+            } else {
+                setDarkMode(false); 
+            }
+            darkModeToggle.addEventListener('click', () => {
+                setDarkMode(!body.classList.contains('dark'));
+            });
+        }
+        
+        // Particles.js Configuration
+        function initializeParticles(isDark) {
+            const particleColor = isDark ? getComputedStyle(document.documentElement).getPropertyValue('--particle-color-dark').trim().replace(/"/g, '') : getComputedStyle(document.documentElement).getPropertyValue('--particle-color-light').trim().replace(/"/g, '');
+            const particleLineColor = isDark ? getComputedStyle(document.documentElement).getPropertyValue('--particle-line-color-dark').trim().replace(/"/g, '') : getComputedStyle(document.documentElement).getPropertyValue('--particle-line-color-light').trim().replace(/"/g, '');
+            
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 60, 
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": particleColor
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.4, 
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 0.8,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 2.5,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 130, 
+                        "color": particleLineColor,
+                        "opacity": 0.3, 
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 1.5, 
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab" 
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 120, 
+                            "line_linked": {
+                                "opacity": 0.7 
+                            }
+                        },
+                        "bubble": {
+                            "distance": 200,
+                            "size": 3,
+                            "duration": 2,
+                            "opacity": 0.8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 150,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderCertifications(); 
+            renderProjects(); 
+            scrollElementsToAnimate = document.querySelectorAll('.animate-on-scroll'); 
+            
+            if (typingNameTextElement && nameTypingCursorElement) { 
+                typeName();
+            }
+            
+            updateActiveNavLink(); 
+            handleScrollAnimation(); 
+            
+            window.addEventListener('scroll', handleScrollAnimation); 
+            setTimeout(handleScrollAnimation, 250); 
+
+            initializeParticles(body.classList.contains('dark'));
+            if (darkModeToggle) {
+                darkModeToggle.addEventListener('click', () => {
+                    setTimeout(() => {
+                         if (window.pJSDom && window.pJSDom.length > 0) {
+                            window.pJSDom[0].pJS.fn.vendors.destroypJS();
+                            window.pJSDom = [];
+                        }
+                        initializeParticles(body.classList.contains('dark'));
+                    }, 50);
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>
